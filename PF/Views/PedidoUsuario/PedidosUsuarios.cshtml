@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Pedido>
+@{
+    ViewData["Title"] = "GetCarrinhoUsuario";
+}
+
+<a href="/Identity/Account/Manage" class="btn btn-danger">Voltar</a>
+<div style="width:100%; ">
+    <h4>Meus pedidos</h4>
+    @if (Model != null && Model.Count() > 0)
+    {
+        <table class="table table-striped m-2">
+            
+            @foreach (var pedido in Model)
+            {
+                
+                <tr>
+                    <th>Data do pedido</th>
+                    <th>Status do Pedido</th>
+                </tr>
+                <tr>
+                    <td>@pedido.Data.ToString("dd-MM-yyyy")</td>
+                    <td>@pedido.StatusPedido.StatusNome</td>
+                </tr>
+                @if (pedido.DetalhesPedidos != null && pedido.DetalhesPedidos.Count() > 0)
+                {
+                    
+                    <tr>
+                        <td>
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td>
+                                        Total de itens:
+                                    </td>
+                                    <td>
+                                        @(pedido.DetalhesPedidos.Select(item => item.Produto.ProdutoPreco * item.Quantidade).Sum())
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Produto</th>
+                                    <th>Imagem</th>
+                                    <th>Categoria</th>
+                                    <th>Preço unitário (R$)</th>
+                                    <th>Total</th>
+                                </tr>
+                                @foreach (var item in pedido.DetalhesPedidos)
+                                {
+                                    <tr>
+                                        <td>@item.Produto.ProdutoNome</td>
+                                        <td>
+                                            @if (string.IsNullOrEmpty(item.Produto.Imagem))
+                                            {
+                                                <img style="width: 80px; height: 80px" src="/images/No_Image_Available.jpg" alt="...">
+                                            }
+                                            else
+                                            {
+                                                <img src="/images/@item.Produto.Imagem" style="width:80px; height:80px" />
+                                            }
+                                        </td>
+                                        <td>@item.Produto.Categoria.CategoriaNome</td>
+                                        <td>R$ @item.Produto.ProdutoPreco x @item.Quantidade</td>
+                                        <td>@(item.Produto.ProdutoPreco * item.Quantidade)</td>
+                                    </tr>
+                                }
+                            </table>
+                        </td>
+                    </tr>
+                } 
+            }
+
+        </table>
+
+    }
+    else
+    {
+        <h5>Sem pedidos.</h5>
+    }
+</div>
+

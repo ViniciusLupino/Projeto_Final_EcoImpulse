@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Pedido>
+@{
+	ViewData["Title"] = "TodosOsPedidos";
+}
+
+<div style="width:100%" class="mt-2">
+	<h4>Pedidos</h4>
+	@if (Model != null && Model.Count() > 0)
+	{
+		<table class="table table-stripped">
+			<tr>
+				<th>Data do pedido</th>
+				<th>Nome do comprador</th>
+				<th>Email do comprador</th>
+				<th>Número do telefone</th>
+				<th>Endereço</th>
+				<th>Status do Pagamento</th>
+				<th>Status do Pedido</th>
+				<th>Ações</th>
+			</tr>
+			@foreach(var pedido in Model)
+			{
+				<tr>
+					<td>@pedido.Data.ToString("dd-MM-yyyy")</td>
+					<td>@pedido.NomeRemetente</td>
+					<td>@pedido.EmailRemetente</td>
+					<td>@pedido.EnderecoRemetente</td>
+					<td>@pedido.MetodoDePagamento | @(pedido.EstaPago?"Pago" : "Não pago")</td>
+					<td>@pedido.StatusPedido.StatusNome</td>
+					<td>
+						<button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary">Detalhes Pedido</button>
+						<a asp-action="UpdateStatusPagamento" asp-route-pedidoId="@pedido.IdPedido" class="btn btn-info">Mudar Status Pedido</a>
+						<a asp-action="MudarStatusPagamento" asp-route-pedidoId="@pedido.IdPedido" class="btn btn-info">Mudar Status Pagamento</a>
+					@await Html.PartialAsync("/Views/OperacoesAdmin/_PedidoDetalhesModal.cshtml")
+					</td>
+				</tr>
+			}
+		</table>
+		
+	}
+	else
+	{
+		<h5>Não há pedidos</h5>
+	}
+</div>
+
+

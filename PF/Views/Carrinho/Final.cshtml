@@ -1,0 +1,42 @@
+﻿@model FinalModel
+@{
+	ViewData["Title"] = "Final";
+}
+
+<h1>Final</h1>
+
+<form asp-action="Final">
+	<div class="py-2">
+		<label asp-for="NomeRemetente">Nome*</label>
+		<input type="text" class="form-control" asp-for="NomeRemetente" />
+		<span asp-validation-for="NomeRemetente" class="text-danger"></span>
+	</div>
+	<div class="py-2">
+		<label asp-for="EmailRemetente">Email*</label>
+		<input type="text" class="form-control" asp-for="EmailRemetente" />
+		<span asp-validation-for="EmailRemetente" class="text-danger"></span>
+	</div>
+	<div class="py-2">
+		<label asp-for="TelefoneRemetente">Telefone*</label>
+		<input type="text" class="form-control" asp-for="TelefoneRemetente" />
+		<span asp-validation-for="TelefoneRemetente" class="text-danger"></span>
+	</div>
+	<div class="py-2">
+		<label asp-for="EnderecoRemetente">Endereço*</label>
+		<textarea class="form-control" asp-for="EnderecoRemetente" rows="5"></textarea>
+		<span asp-validation-for="EnderecoRemetente" class="text-danger"></span>
+	</div>
+	<div class="py-2">
+		<span class="mr-2">Método de pagamento</span>
+		<select asp-for="MetodoDePagamento" class="form-control">
+			<option value="">Selecione o método de pagamento</option>
+			@foreach (var metodo in Enum.GetValues(typeof(PF.Constantes.MetodosDePagamento)))
+			{
+				<option value="@metodo.ToString()">@metodo.ToString()</option>
+			}
+		</select>
+	</div>
+	<div class="py-2">
+		<button type="submit" class="btn btn-info">Finalizar Compra</button>
+	</div>
+</form>

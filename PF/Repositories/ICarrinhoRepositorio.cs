@@ -6,6 +6,6 @@
         Task<int> RemoverItem(int itemId);
         Task<Carrinho> GetUserCarrinho();
         Task<int> GetCarrinhoItemCount(string userId = "");
-        Task<bool> Finalizar();
+        Task<bool> Finalizar(FinalModel finalModel);
     }
 }

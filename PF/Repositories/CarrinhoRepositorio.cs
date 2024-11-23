@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Net.Quic;
@@ -145,7 +146,7 @@ namespace PF.Repositories
 
         }
 
-        public async Task<bool> Finalizar()
+        public async Task<bool> Finalizar(FinalModel finalModel)
         {
             using var transaction = _db.Database.BeginTransaction();
             try
@@ -168,11 +169,22 @@ namespace PF.Repositories
                 {
                     throw new Exception("Não há itens no carrinho");
                 }
+                var gravacaoPendente = _db.StatusPedidos.FirstOrDefault(s => s.StatusNome == "Pendente");
+                if(gravacaoPendente is null)
+                {
+                    throw new Exception("O pedido não possui o status Pendente");
+                }
                 var pedido = new Pedido
                 {
                     UserId = userId,
                     Data = DateTime.UtcNow,
-                    StatusPedidoId = 1, //Pendente
+                    NomeRemetente = finalModel.NomeRemetente,
+                    EmailRemetente = finalModel.EmailRemetente,
+                    TelefoneRemetente = finalModel.TelefoneRemetente,
+                    MetodoDePagamento = finalModel.MetodoDePagamento,
+                    EnderecoRemetente = finalModel.EnderecoRemetente,
+                    EstaPago = false,
+                    StatusPedidoId = gravacaoPendente.StatusId
                 };
                 _db.Pedidos.Add(pedido);
                 _db.SaveChanges();

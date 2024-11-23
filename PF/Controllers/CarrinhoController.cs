@@ -34,14 +34,34 @@
             int carrinhoItem = await _carrinhoRepo.GetCarrinhoItemCount();
             return Ok(carrinhoItem);
         }
-        public async Task<IActionResult> Final()
+        public IActionResult Final()
         {
-            bool estaFinalizado = await _carrinhoRepo.Finalizar();
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Final(FinalModel finalModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(finalModel);
+            }
+            bool estaFinalizado = await _carrinhoRepo.Finalizar(finalModel);
             if (!estaFinalizado)
             {
-                throw new Exception("Algo deu errado, tente novamente mais tarde.");
+                return RedirectToAction(nameof(Falha));
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction(nameof(Sucesso));
         }
-    }
+
+		public IActionResult Sucesso()
+		{
+			return View();
+		}
+
+		public IActionResult Falha()
+		{
+			return View();
+		}
+	}
 }

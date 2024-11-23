@@ -1,18 +1,35 @@
 ﻿@model DetalhePedidoModal
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal-@Model.IdDiv" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Detalhes do pedido</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                ...
+                <table class="table table-striped">
+                    <tr>
+                        <th>Produto</th>
+                        <th>Categoria</th>
+                        <th>Preço</th>
+                        <th>Quantidade</th>
+                        <th>Preço total</th>
+                    </tr>
+                    @foreach(var item in Model.DetalhePedidos)
+                    {
+                        <tr>
+                            <td>@item.Produto.ProdutoNome</td>
+                            <td>@item.Produto.Categoria.CategoriaNome</td>
+                            <td>R$ @item.PrecoUnitario</td>
+                            <td>@item.Quantidade</td>
+                            <td>R$ @(item.Quantidade * item.PrecoUnitario)</td>
+                        </tr>
+                    }   
+                </table>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
             </div>
         </div>
     </div>

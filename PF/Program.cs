@@ -19,8 +19,14 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<ILojaRepositorio, LojaRepositorio>();
 builder.Services.AddTransient<ICarrinhoRepositorio, CarrinhoRepositorio>();
 builder.Services.AddTransient<IPedidoUsuarioRepositorio, PedidoUsuarioRepositorio>();
+builder.Services.AddTransient<IEstoqueRepositorio, EstoqueRepositorio>();
+builder.Services.AddTransient<ICategoriaRepositorio, CategoriaRepositorio>();
 
 var app = builder.Build();
+
+/////////////////////////// Descomente o código CreateScope() para gerar o usuário administrador.
+/////////////////////////// As informações de Login estão no /Data/DbSeeder
+
 
 //using (var scope = app.Services.CreateScope())
 //{

@@ -1,13 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using System.Drawing;
-using System.Drawing.Text;
-using System.Net.Quic;
 
 namespace PF.Repositories
 {
-    public class CarrinhoRepositorio : ICarrinhoRepositorio
+	public class CarrinhoRepositorio : ICarrinhoRepositorio
     {
         private readonly ApplicationDbContext _db;
         private readonly UserManager<IdentityUser> _userManager;
@@ -26,7 +22,7 @@ namespace PF.Repositories
             try
             {
                 if (string.IsNullOrEmpty(userId))
-                    throw new Exception("Usuário não está logado!");
+                    throw new UnauthorizedAccessException("Usuário não está logado!");
 
                 var cart = await GetCarrinho(userId);
                 if (cart is null)
@@ -76,19 +72,19 @@ namespace PF.Repositories
             try
             {
                 if (string.IsNullOrEmpty(userId))
-                    throw new Exception("Usuário não está logado!");
+                    throw new UnauthorizedAccessException("Usuário não está logado!");
 
                 var cart = await GetCarrinho(userId);
                 if (cart is null)
                 {
-                    throw new Exception("Carrinho inválido!");
+                    throw new InvalidOperationException("Carrinho inválido!");
                 }
 
                 var cartItem = _db.DetalheCarrinhos
                                 .FirstOrDefault(a => a.CarrinhoId == cart.IdCarrinho && a.ProdutoId == itemId);
                 if (cartItem is null)
                 {
-                    throw new Exception("Carrinho vazio!");
+                    throw new InvalidOperationException("Carrinho vazio!");
                 }
                 else if (cartItem.Quantidade == 1)
                 {
@@ -114,8 +110,11 @@ namespace PF.Repositories
         {
             var userId = GetUserId();
             if (userId == null)
-                throw new Exception("Identificador de usuário inválido!");
+                throw new InvalidOperationException("Identificador de usuário inválido!");
             var carrinhoDeCompras = await _db.Carrinhos
+                .Include(a => a.CarrinhoDetalhes)
+                .ThenInclude(a => a.Produto)
+                .ThenInclude(a => a.Estoques)
                 .Include(a => a.CarrinhoDetalhes)
                 .ThenInclude(a => a.Produto)
                 .ThenInclude(a => a.Categoria)
@@ -157,17 +156,17 @@ namespace PF.Repositories
                 var userId = GetUserId();
                 if (string.IsNullOrEmpty(userId))
                 {
-                    throw new Exception("Usuário não está logado");
+                    throw new UnauthorizedAccessException("Usuário não está logado");
                 }
                 var carrinho = await GetCarrinho(userId);
                 if (carrinho is null)
                 {
-                    throw new Exception("Carrinho inválido");
+                    throw new InvalidOperationException("Carrinho inválido");
                 }
                 var detalheCarrinho = _db.DetalheCarrinhos.Where(a => a.CarrinhoId == carrinho.IdCarrinho).ToList();
                 if (detalheCarrinho.Count == 0)
                 {
-                    throw new Exception("Não há itens no carrinho");
+                    throw new InvalidOperationException("Não há itens no carrinho");
                 }
                 var gravacaoPendente = _db.StatusPedidos.FirstOrDefault(s => s.StatusNome == "Pendente");
                 if(gravacaoPendente is null)
@@ -198,8 +197,19 @@ namespace PF.Repositories
                         PrecoUnitario = item.PrecoUnitario
                     };
                     _db.DetalhesPedidos.Add(detalhePedido);
+
+                    var estoque = await _db.Estoques.FirstOrDefaultAsync(a => a.ProdutoId == item.ProdutoId);
+                    if(estoque == null)
+                    {
+                        throw new InvalidOperationException("Estoque nulo");
+                    }
+                    if(item.Quantidade > estoque.QuantidadeEstoque)
+                    {
+                        throw new InvalidOperationException($"Apenas {estoque.QuantidadeEstoque} unidades estão disponíveis no estoque.");
+                    }
+                    estoque.QuantidadeEstoque -= item.Quantidade;
                 }
-                _db.SaveChanges();
+                //_db.SaveChanges();
 
                 _db.DetalheCarrinhos.RemoveRange(detalheCarrinho);
                 _db.SaveChanges();

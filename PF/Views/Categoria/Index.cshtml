@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Categoria>
+@{
+}
+
+<h2>Categorias</h2>
+
+<a asp-action="AddCategoria" asp-controller="Categoria" class="btn btn-primary">
+	Adicionar Categoria
+</a>
+
+<table class="table table-striped my-2">
+	<tr>
+		<th>Categoria</th>
+		<th>Ação</th>
+	</tr>
+
+	@foreach (var categoria in Model)
+	{
+		<tr>
+			<td>@categoria.CategoriaNome</td>
+			<td>
+				<a asp-action="UpdateCategoria" asp-controller="Categoria" asp-route-id="@categoria.IdCategoria" class="btn btn-primary">Editar</a>
+				<a asp-action="DeletarCategoria" asp-controller="Categoria" asp-route-id="@categoria.IdCategoria" class="btn btn-danger" onclick="return window.confirm('Você tem certeza?')">Deletar</a>
+			</td>
+		</tr>
+	}
+</table>

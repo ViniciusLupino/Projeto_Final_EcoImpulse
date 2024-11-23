@@ -21,7 +21,12 @@ namespace PF.Repositories
         {
             sTerm = sTerm.ToLower();
             IEnumerable<Produto> produtos = await (from Produto in _db.Produtos
-                                                   join Categoria in _db.Categorias on Produto.CategoriaId equals Categoria.IdCategoria
+                                                   join Categoria in _db.Categorias 
+                                                   on Produto.CategoriaId equals Categoria.IdCategoria
+                                                   join Estoque in _db.Estoques
+                                                   on Produto.IdProduto equals Estoque.ProdutoId
+                                                   into produto_estoques
+                                                   from produtoComEstoque in produto_estoques.DefaultIfEmpty()
                                                    where string.IsNullOrWhiteSpace(sTerm) || (Produto != null && Produto.ProdutoNome.ToLower().StartsWith(sTerm))
 
                                                    select new Produto
@@ -32,6 +37,7 @@ namespace PF.Repositories
                                                        ProdutoNome = Produto.ProdutoNome,
                                                        CategoriaNome = Categoria.CategoriaNome,
                                                        CategoriaId = Categoria.IdCategoria,
+                                                       Quantidade = produtoComEstoque == null? 0 : produtoComEstoque.QuantidadeEstoque
 
                                                    }).ToListAsync();
 

@@ -1,0 +1,25 @@
+﻿@model AtuallizarPedidoModel
+@{
+	ViewData["Title"] = "UpdateStatusPagamento";
+}
+
+<h1>Atualizar o status do pedido</h1>
+
+<a class="my-2 btn btn-primary" asp-action="TodosOsPedidos">Voltar</a>
+<form style="width: 50%;" asp-action="UpdateStatusPagamento" class="pt-2">
+	<input type="hidden" asp-for="PedidoId" />
+	<div class="mb-2">
+		<label>Método de pagamento</label>
+		<select class="form-control" asp-for="StatusPedidoId" asp-items="@Model.PedidoStatusList">
+			<option value="">Selecione o método de pagamento</option>
+		</select>
+		<span class="text-danger" asp-validation-for="StatusPedidoId"></span>
+	</div>
+	<button type="submit" class="btn btn-primary">Atualizar</button>
+	@if(TempData["msg"] != null)
+	{
+		<div class="text-info my-2">
+			@TempData["msg"]
+		</div>
+	}
+</form>

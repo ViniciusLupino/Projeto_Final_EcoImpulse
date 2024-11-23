@@ -1,0 +1,21 @@
+﻿@model EstoqueDataTransferObj
+@{
+    ViewData["Title"] = "ManejarEstoque";
+}
+
+<div style="width:50%">
+    <h2>Gerenciar Estoque</h2>
+    <a asp-action="Index" asp-controller="Estoque" class="btn btn-danger">Voltar</a>
+    <form asp-action="GerenciarEstoque">
+        <input type="hidden" asp-for="ProdutoId" />
+        <div class ="my-2">
+            <label>Quantidade</label>
+            <input type="number" min="0" value="0" class="form-control" asp-for="Estoque" />
+            <span asp-validation-for="Estoque" class="text-danger"></span>
+        </div>
+        <div class="my-2">
+            <button type="submit" class="btn btn-secondary">Atualizar</button>
+        </div>
+    </form>
+</div>
+

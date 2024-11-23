@@ -24,14 +24,15 @@
 					<td>@pedido.Data.ToString("dd-MM-yyyy")</td>
 					<td>@pedido.NomeRemetente</td>
 					<td>@pedido.EmailRemetente</td>
+					<td>@pedido.TelefoneRemetente</td>
 					<td>@pedido.EnderecoRemetente</td>
 					<td>@pedido.MetodoDePagamento | @(pedido.EstaPago?"Pago" : "Não pago")</td>
 					<td>@pedido.StatusPedido.StatusNome</td>
 					<td>
-						<button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary">Detalhes Pedido</button>
+						<button type="button" data-bs-toggle="modal" data-bs-target="#modal-@pedido.IdPedido" class="btn btn-primary">Detalhes Pedido</button>
 						<a asp-action="UpdateStatusPagamento" asp-route-pedidoId="@pedido.IdPedido" class="btn btn-info">Mudar Status Pedido</a>
 						<a asp-action="MudarStatusPagamento" asp-route-pedidoId="@pedido.IdPedido" class="btn btn-info">Mudar Status Pagamento</a>
-					@await Html.PartialAsync("/Views/OperacoesAdmin/_PedidoDetalhesModal.cshtml")
+					@await Html.PartialAsync("/Views/OperacoesAdmin/_PedidoDetalhesModal.cshtml", new DetalhePedidoModal{IdDiv=pedido.IdPedido.ToString(), DetalhePedidos = pedido.DetalhesPedidos})
 					</td>
 				</tr>
 			}

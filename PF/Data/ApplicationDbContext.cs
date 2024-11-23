@@ -17,5 +17,6 @@ namespace PF.Data
         public DbSet<Pedido> Pedidos { get; set; }
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<StatusPedido> StatusPedidos { get; set; }
+        public DbSet<Estoque> Estoques { get; set; }
     }
 }

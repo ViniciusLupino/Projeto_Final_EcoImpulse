@@ -1,56 +1,63 @@
 ﻿@model Carrinho
 @{
-    ViewData["Title"] = "GetCarrinhoUsuario";
+	ViewData["Title"] = "GetCarrinhoUsuario";
 }
 
 <div style="width:90%; margin:auto">
-    @if (Model != null && Model.CarrinhoDetalhes != null && Model.CarrinhoDetalhes.Count > 0)
-    {
-        <h3>Meu Carrinho</h3>
-        <table class="table table-bordered">
-            <tr>
-                <th>Produto</th>
-                <th>Imagem</th>
-                <th>Categoria</th>
-                <th>Preço unitário (R$)</th>
-                <th>Total</th>
-                <th>Ação</th>
-            </tr>
-            @foreach (var item in Model.CarrinhoDetalhes)
-            {
-                <tr>
-                    <td>@item.Produto.ProdutoNome</td>
-                    <td>
-                        @if (string.IsNullOrEmpty(item.Produto.Imagem))
-                        {
-                            <img style="width: 80px; height: 80px" src="/images/No_Image_Available.jpg" alt="...">
-                        }
-                        else
-                        {
-                            <img src="/images/@item.Produto.Imagem" style="width:80px; height:80px" />
-                        }
-                    </td>
-                    <td>@item.Produto.Categoria.CategoriaNome</td>
-                    <td>R$ @item.Produto.ProdutoPreco x @item.Quantidade</td>
-                    <td>@(item.Produto.ProdutoPreco * item.Quantidade)</td>
-                    <td>
-                        <a class="btn btn-info" href="/Carrinho/AddItem?produtoId=@item.ProdutoId&&redirect=1">+</a>
-                        <a class="btn btn-info" href="/Carrinho/RemoverItem?itemId=@item.ProdutoId">-</a>
-                    </td>
-                </tr>
-            }
-        </table>
-        <div class="my-2">
-            <h5>Total (R$): </h5>
-            @(Model.CarrinhoDetalhes.Select(item => item.Produto.ProdutoPreco * item.Quantidade).Sum())
-        </div>
-        <div class="my-2">
-            <a class="btn btn-primary" href="/Carrinho/Final">Finalizar</a>
-        </div>
-    }
-    else
-    {
-        <h5>Carrinho vazio.</h5>
-    }
+	@if (Model != null && Model.CarrinhoDetalhes != null && Model.CarrinhoDetalhes.Count > 0)
+	{
+		<h3>Meu Carrinho</h3>
+		<table class="table table-bordered">
+			<tr>
+				<th>Produto</th>
+				<th>Imagem</th>
+				<th>Categoria</th>
+				<th>Preço unitário (R$)</th>
+				<th>Total</th>
+				<th>Ação</th>
+			</tr>
+			@foreach (var item in Model.CarrinhoDetalhes)
+			{
+				<tr>
+					<td>@item.Produto.ProdutoNome</td>
+					<td>
+						@if (string.IsNullOrEmpty(item.Produto.Imagem))
+						{
+							<img style="width: 80px; height: 80px" src="/images/No_Image_Available.jpg" alt="...">
+						}
+						else
+						{
+							<img src="/images/@item.Produto.Imagem" style="width:80px; height:80px" />
+						}
+					</td>
+					<td>@item.Produto.Categoria.CategoriaNome</td>
+					<td>R$ @item.Produto.ProdutoPreco x @item.Quantidade</td>
+					<td>@(item.Produto.ProdutoPreco * item.Quantidade)</td>
+					<td>
+						@if (item.Quantidade > item.Produto.Quantidade)
+						{
+							<a class="btn btn-info" href="/Carrinho/AddItem?produtoId=@item.ProdutoId&&redirect=1">+</a>
+						}
+						else
+						{
+							<span style="border: 1px solid; padding:5px 8px; color:red; border-radius:5px; margin-right:5px">Sem estoque</span>
+						}
+						<a class="btn btn-info" href="/Carrinho/RemoverItem?itemId=@item.ProdutoId">-</a>
+					</td>
+				</tr>
+			}
+		</table>
+		<div class="my-2">
+			<h5>Total (R$): </h5>
+			@(Model.CarrinhoDetalhes.Select(item => item.Produto.ProdutoPreco * item.Quantidade).Sum())
+		</div>
+		<div class="my-2">
+			<a class="btn btn-primary" href="/Carrinho/Final">Finalizar</a>
+		</div>
+	}
+	else
+	{
+		<h5>Carrinho vazio.</h5>
+	}
 </div>
 

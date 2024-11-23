@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PF.Data;
 
@@ -11,9 +12,11 @@ using PF.Data;
 namespace PF.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241123121646_Estoques")]
+    partial class Estoques
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -237,7 +240,7 @@ namespace PF.Migrations
 
                     b.HasKey("IdCarrinho");
 
-                    b.ToTable("Carrinhos", (string)null);
+                    b.ToTable("Carrinhos");
                 });
 
             modelBuilder.Entity("PF.Models.Categoria", b =>
@@ -259,7 +262,7 @@ namespace PF.Migrations
 
                     b.HasKey("IdCategoria");
 
-                    b.ToTable("Categorias", (string)null);
+                    b.ToTable("Categorias");
                 });
 
             modelBuilder.Entity("PF.Models.DetalheCarrinho", b =>
@@ -288,7 +291,7 @@ namespace PF.Migrations
 
                     b.HasIndex("ProdutoId");
 
-                    b.ToTable("DetalheCarrinhos", (string)null);
+                    b.ToTable("DetalheCarrinhos");
                 });
 
             modelBuilder.Entity("PF.Models.DetalhePedido", b =>
@@ -317,7 +320,7 @@ namespace PF.Migrations
 
                     b.HasIndex("ProdutoId");
 
-                    b.ToTable("DetalhesPedidos", (string)null);
+                    b.ToTable("DetalhesPedidos");
                 });
 
             modelBuilder.Entity("PF.Models.Estoque", b =>
@@ -339,7 +342,7 @@ namespace PF.Migrations
                     b.HasIndex("ProdutoId")
                         .IsUnique();
 
-                    b.ToTable("Estoques", (string)null);
+                    b.ToTable("Estoques");
                 });
 
             modelBuilder.Entity("PF.Models.Pedido", b =>
@@ -393,7 +396,7 @@ namespace PF.Migrations
 
                     b.HasIndex("StatusPedidoId");
 
-                    b.ToTable("Pedidos", (string)null);
+                    b.ToTable("Pedidos");
                 });
 
             modelBuilder.Entity("PF.Models.Produto", b =>
@@ -427,7 +430,7 @@ namespace PF.Migrations
 
                     b.HasIndex("CategoriaId");
 
-                    b.ToTable("Produtos", (string)null);
+                    b.ToTable("Produtos");
                 });
 
             modelBuilder.Entity("PF.Models.StatusPedido", b =>
@@ -448,7 +451,7 @@ namespace PF.Migrations
 
                     b.HasKey("IdStatusPedido");
 
-                    b.ToTable("StatusPedidos", (string)null);
+                    b.ToTable("StatusPedidos");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

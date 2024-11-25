@@ -26,6 +26,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Vinicius\Desktop\PF\PF
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Vinicius/Desktop/PF/PF/wwwroot/images/Ods.cshtml]
+build_metadata.AdditionalFiles.TargetPath = d3d3cm9vdFxpbWFnZXNcT2RzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Vinicius/Desktop/PF/PF/Areas/Identity/Pages/Account/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -230,6 +234,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Vinicius/Desktop/PF/PF/Views/Inicio/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5pY2lvXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Vinicius/Desktop/PF/PF/Views/ODS/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT0RTXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Vinicius/Desktop/PF/PF/Views/OperacoesAdmin/TodosOsPedidos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3BlcmFjb2VzQWRtaW5cVG9kb3NPc1BlZGlkb3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -244,6 +256,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Vinicius/Desktop/PF/PF/Views/PedidoUsuario/PedidosUsuarios.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvVXN1YXJpb1xQZWRpZG9zVXN1YXJpb3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Vinicius/Desktop/PF/PF/Views/PessoaSust/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVzc29hU3VzdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Vinicius/Desktop/PF/PF/Views/Produto/AddProduto.cshtml]

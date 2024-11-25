@@ -17,15 +17,22 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarColor01">
 				<ul class="navbar-nav me-auto">
+
 					<li class="nav-item">
-						<a class="nav-link active" href="/Home/Index">
+						<a class="nav-link" href="/Inicio/Index">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/ODS/Index">ODS's</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/PessoaSust/Index">Pessoa sustentável</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/Home/Index">
 							Marketplace
-							<span class="visually-hidden">(current)</span>
 						</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="/Home/Privacy">Privacy</a>
-					</li>
+
 					@if (User.IsInRole(PF.Constantes.Roles.Admin.ToString()))
 					{
 						<li class="nav-item">
@@ -41,6 +48,9 @@
 							<a class="nav-link" href="/Produto/Index">Produtos</a>
 						</li>
 					}
+					<li class="nav-item">
+						<a class="nav-link" href="/Home/Privacy">Privacy</a>
+					</li>
 				</ul>
 				<partial name="_LoginPartial" />
 			</div>

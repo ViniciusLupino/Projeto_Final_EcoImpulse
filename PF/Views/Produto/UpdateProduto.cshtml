@@ -1,0 +1,49 @@
+﻿@model ProdutoDataTransferObj
+
+<div style="width:50%">
+    <h2> Update produto </h2>
+    <a asp-action="Index" asp-controller="Produto" class="btn btn-primary">Back</a>
+    <form asp-action="UpdateProduto" enctype="multipart/form-data">
+        <input type="hidden" asp-for="ProdutoId" />
+        <input type="hidden" asp-for="Imagem" />
+
+        <div class="my-2">
+            <label>produto*</label>
+            <input type="text" class="form-control" asp-for="ProdutoNome" />
+            <span asp-validation-for="ProdutoNome" class="text-danger"></span>
+        </div>
+
+        <div class="my-2">
+            <label>produto*</label>
+            <input type="text" class="form-control" asp-for="ProdutoDescricao" />
+            <span asp-validation-for="ProdutoDescricao" class="text-danger"></span>
+        </div>
+
+        <div class="my-2">
+            <label>genero*</label>
+            <select class="form-control" asp-for="CategoriaId" asp-items="Model.CategoriaList">
+                <option value="">Select genero</option>
+            </select>
+            <span asp-validation-for="CategoriaId" class="text-danger"></span>
+        </div>
+
+        <div class="my-2">
+            <label>Price*</label>
+            <input type="number" class="form-control" asp-for="Preco" />
+            <span asp-validation-for="Preco" class="text-danger"></span>
+        </div>
+
+        <div class="my-2">
+            <label>Image</label>
+            @if(!string.IsNullOrEmpty(Model.Imagem))
+            {
+                <img src="/images/@Model.Imagem" style="width:100px;height:80px"/>
+            }
+            <input type="file" class="form-control" asp-for="ArquivoImagem" />
+        </div>
+
+        <div class="my-2">
+            <button type="submit" class="btn btn-info">Update</button>
+        </div>
+    </form>
+</div>

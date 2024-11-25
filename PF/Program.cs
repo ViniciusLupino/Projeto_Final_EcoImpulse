@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using PF;
+using PF.Shared;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +22,8 @@ builder.Services.AddTransient<ICarrinhoRepositorio, CarrinhoRepositorio>();
 builder.Services.AddTransient<IPedidoUsuarioRepositorio, PedidoUsuarioRepositorio>();
 builder.Services.AddTransient<IEstoqueRepositorio, EstoqueRepositorio>();
 builder.Services.AddTransient<ICategoriaRepositorio, CategoriaRepositorio>();
+builder.Services.AddTransient<IProdutoRepositorio, ProdutoRepositorio>();
+builder.Services.AddTransient<IFileService, FileService>();
 
 var app = builder.Build();
 

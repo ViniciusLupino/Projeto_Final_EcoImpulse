@@ -13,16 +13,20 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Vinicius\\Desktop\\PF\\PF\\wwwroot\\images\\0379454d-cfc0-4814-a22f-bb915afe0984.jpg",
+      "PackagePath": "staticwebassets\\images\\0379454d-cfc0-4814-a22f-bb915afe0984.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Vinicius\\Desktop\\PF\\PF\\wwwroot\\images\\7e785acb-7071-4fe0-a699-7b6f238e2f6e.jpg",
+      "PackagePath": "staticwebassets\\images\\7e785acb-7071-4fe0-a699-7b6f238e2f6e.jpg"
+    },
+    {
       "Id": "C:\\Users\\Vinicius\\Desktop\\PF\\PF\\wwwroot\\images\\No_Image_Available.jpg",
       "PackagePath": "staticwebassets\\images\\No_Image_Available.jpg"
     },
     {
       "Id": "C:\\Users\\Vinicius\\Desktop\\PF\\PF\\wwwroot\\images\\Vestido_orquidea.jpg",
       "PackagePath": "staticwebassets\\images\\Vestido_orquidea.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Vinicius\\Desktop\\PF\\PF\\wwwroot\\images\\img_logo_equipa.png",
-      "PackagePath": "staticwebassets\\images\\img_logo_equipa.png"
     },
     {
       "Id": "C:\\Users\\Vinicius\\Desktop\\PF\\PF\\wwwroot\\lib\\bootstrap\\LICENSE",

@@ -10,11 +10,11 @@ body {
 
 
 .body {
-    background-image: url('../img/FunfoFC.jpg');
-    background-size: cover; /* Ocupa toda a tela */
-    background-position: center; /* Centraliza a imagem */
-    height: 100vh; /* Ocupa toda a altura da tela */
-    margin: 0; /* Remove margens */
+    background-image: url('../images/');
+    background-size: cover;
+    background-position: center; 
+    height: 100vh;
+    margin: 0;
     text-align: center;
 }
 

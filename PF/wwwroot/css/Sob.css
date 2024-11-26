@@ -1,0 +1,438 @@
+
+.about-title {
+    text-align: center;
+    margin: 30px 0;
+    color: black;
+    font-size: 40px;
+}
+
+.about-description {
+    text-align: center;
+    color: #6c757d;
+    font-size: 1.25rem;
+}
+
+.icon img {
+    transition: transform 0.3s;
+}
+
+.icon:hover img {
+    transform: scale(1.1);
+}
+
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.call-to-action {
+    background-color: #e2f0d9;
+    padding: 40px;
+    text-align: center;
+    border-radius: 15px;
+    margin: 40px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+/* Estilo geral dos cards */
+.team-member {
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+    .team-member:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+.member-photo {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    transition: transform 0.3s;
+}
+
+    .member-photo:hover {
+        transform: scale(1.1);
+    }
+
+.modal {
+    display: none; /* Ocultar as modais por padrão */
+    position: fixed; /* Posição fixa para a modal */
+    top: 0; /* Topo da tela */
+    left: 0; /* Lado esquerdo da tela */
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escurecido */
+    justify-content: center; /* Centralizar horizontalmente */
+    align-items: center; /* Centralizar verticalmente */
+    z-index: 1000; /* Z-index para ficar acima de outros elementos */
+}
+
+    .modal.show {
+        display: flex; /* Exibir a modal quando ativada */
+    }
+
+.modal-dialog {
+    max-width: 500px; /* Largura máxima da modal */
+    margin: auto; /* Margem automática para centralização */
+}
+
+.modal-content {
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+.modal-header {
+    background-color: #bdb8ad; /* Cor de fundo do cabeçalho */
+    border-top-left-radius: 10px; /* Bordas arredondadas superiores */
+    border-top-right-radius: 10px; /* Bordas arredondadas superiores */
+    padding: 1rem; /* Padding do cabeçalho */
+}
+
+.modal-title {
+    color: white; /* Cor do título */
+}
+
+.close {
+    color: #ebe7e0; /* Cor do botão de fechar */
+    font-size: 1.5rem; /* Tamanho da fonte do botão de fechar */
+    border: none; /* Sem borda */
+    background: none; /* Sem fundo */
+    cursor: pointer; /* Cursor de pointer */
+}
+
+.modal-body {
+    padding: 1.5rem; /* Padding para a área do corpo da modal */
+}
+
+
+
+@media (max-width: 768px) {
+    .mission p {
+        width: 90%;
+    }
+}
+
+.team-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    cursor: pointer;
+    overflow: hidden; /* Para arredondar as bordas das imagens */
+}
+
+    .team-card:hover {
+        transform: translateY(-5px);
+    }
+
+.image-wrapper {
+    display: flex;
+    justify-content: center; /* Centraliza a imagem horizontalmente */
+    margin-top: 15px; /* Espaçamento superior */
+}
+
+.member-photo {
+    width: 100%; /* Ajusta a largura da imagem */
+    max-width: 150px; /* Tamanho máximo da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 50%; /* Corta a imagem em forma de círculo */
+}
+
+.card-content {
+    padding: 15px;
+}
+
+    .card-content h4 {
+        margin: 10px 0 5px 0;
+        color: #00796b; /* Cor do título em verde */
+    }
+
+.subtitle {
+    margin: 0;
+    color: #4CAF50; /* Cor verde para o subtítulo */
+    font-weight: bold; /* Negrito para o subtítulo */
+}
+
+/* Responsividade para a seção sobre nós */
+.about-section {
+    padding: 20px;
+}
+
+/* Responsividade para a missão */
+.mission {
+    padding: 20px;
+}
+
+/* Responsividade para a equipe */
+.container {
+    padding: 10px;
+}
+
+.team-card {
+    margin-bottom: 20px; /* Espaço entre os cards em telas pequenas */
+}
+
+/* Aumentar o tamanho dos títulos e textos em telas menores */
+.about-title {
+    font-size: 30px; /* Diminuir para telas pequenas */
+}
+
+.about-description {
+    font-size: 1rem; /* Diminuir para telas pequenas */
+}
+
+/* Ajustes para os modais */
+.modal-dialog {
+    margin: 15px; /* Margem reduzida em telas pequenas */
+}
+
+/* Ajustes para o campo de email e botão */
+input[type="email"] {
+    width: 80%; /* Aumentar a largura em telas menores */
+    margin-bottom: 10px; /* Espaço inferior para o botão */
+}
+
+.newsletter-subscription {
+    padding: 20px; /* Menos padding para telas pequenas */
+}
+
+@media (max-width: 576px) {
+    .icon-container {
+        flex-direction: column; /* Colocar ícones em coluna */
+        align-items: center; /* Centralizar ícones */
+    }
+
+    .icon {
+        margin: 10px 0; /* Espaçamento entre ícones */
+    }
+
+    .member-photo {
+        width: 80px; /* Diminuir foto do membro em telas pequenas */
+        height: 80px; /* Diminuir altura da foto do membro */
+    }
+
+    .newsletter-subscription {
+        padding: 20px; /* Diminuir padding para a seção de newsletter */
+    }
+}
+
+
+.testimonials {
+    background-color: #e8f5e9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-left: 4px solid #4CAF50;
+    transition: background-color 0.2s;
+}
+
+    .testimonial:hover {
+        background-color: #f1f8e9;
+    }
+
+section {
+    margin-top: 20px;
+}
+
+h3 {
+    color: #388e3c;
+    margin-top: 10px;
+}
+
+/* Estilos gerais da linha do tempo horizontal */
+.horizontal-timeline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 0;
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    gap: 20px; /* Espaçamento entre os itens */
+}
+
+    /* Linha de gradiente que conecta os eventos */
+    .horizontal-timeline::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        right: 10%;
+        height: 4px;
+        background: linear-gradient(to right, #7BCDA6, #3C8F6B); /* Gradiente sutil */
+        z-index: 0;
+        animation: flow 5s infinite alternate; /* Animação leve de brilho */
+    }
+
+/* Estilos dos itens da linha do tempo */
+.timeline-item {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estilos do conteúdo de cada evento */
+.timeline-content {
+    background: linear-gradient(145deg, #ffffff, #f0f0f0); /* Gradiente de fundo suave */
+    padding: 20px 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+    .timeline-content:hover {
+        transform: translateY(-10px); /* Efeito de elevação ao passar o mouse */
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .timeline-content h4 {
+        color: #2c3e50;
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin: 0 0 8px;
+        text-transform: uppercase;
+    }
+
+    .timeline-content p {
+        color: #455a64;
+        font-family: 'Roboto', sans-serif;
+        font-size: 0.95rem;
+        margin: 0;
+        line-height: 1.4;
+    }
+
+/* Animação de brilho na linha */
+@keyframes flow {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 100%;
+    }
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+    .horizontal-timeline {
+        flex-direction: column; /* Empilha os itens verticalmente */
+        padding: 20px;
+        gap: 30px;
+    }
+
+        /* Mantém a linha visível em dispositivos móveis */
+        .horizontal-timeline::before {
+            height: 4px; /* Garante que a linha esteja visível */
+            top: 50%; /* Posiciona a linha no meio */
+        }
+
+    .timeline-item {
+        margin-bottom: 20px;
+    }
+}
+
+
+/* Estilo do contêiner da linha do tempo */
+.timeline-container {
+    margin-top:30px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+
+/* Estilos da linha do tempo horizontal */
+.horizontal-timeline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 0;
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+    /* Resto do CSS (o mesmo que antes) */
+    .horizontal-timeline::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        right: 10%;
+        height: 4px;
+        background: linear-gradient(to right, #7BCDA6, #3C8F6B);
+        z-index: 0;
+        animation: flow 5s infinite alternate;
+    }
+
+.timeline-item {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content {
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    padding: 20px 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+    .timeline-content:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .timeline-content h4 {
+        color: #2c3e50;
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin: 0 0 8px;
+        text-transform: uppercase;
+    }
+
+    .timeline-content p {
+        color: #455a64;
+        font-family: 'Roboto', sans-serif;
+        font-size: 0.95rem;
+        margin: 0;
+        line-height: 1.4;
+    }
+
+@keyframes flow {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .horizontal-timeline {
+        flex-direction: column;
+        padding: 20px;
+        gap: 30px;
+    }
+
+        .horizontal-timeline::before {
+            height: 0;
+        }
+
+    .timeline-item {
+        margin-bottom: 20px;
+    }
+}

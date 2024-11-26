@@ -1,0 +1,65 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/*ADICIONAR PROD*/
+#frm-prod {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    margin-top: 30px;
+}
+
+    #frm-prod
+    textarea {
+        font-family: 'Calibri';
+        font-size: 18px;
+        margin: 5px 0px;
+        border-radius: 10px;
+        padding: 5px 10px;
+    }
+
+textarea {
+    resize: none;
+    padding: 6px;
+    background-color: #D1DEC6;
+    opacity: 50%;
+    border: none;
+}
+
+#botao-enviar {
+    height: 50px;
+    width: 90px;
+    background-color: #2D6001;
+    color: white;
+}
+
+#botao-voltar {
+    height: 50px;
+    width: 90px;
+    background-color: #2D6001;
+    color: white;
+}
+/*ADICIONAR PROD*/
+
+
+

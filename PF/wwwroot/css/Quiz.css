@@ -1,0 +1,117 @@
+body {
+    background-image: url('../img/FundoQuiz.jpg'); /* Substitua com o nome da sua imagem de fundo */
+    background-size: cover; /* Ocupa toda a tela */
+    background-position: center; /* Centraliza a imagem */
+    height: 100vh; /* Ocupa toda a altura da tela */
+    margin: 0; /* Remove margens */
+}
+
+.container {
+    display: flex; /* Adicionado para flexibilidade */
+    flex-direction: column; /* Alinha os itens em coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    justify-content: center; /* Centraliza os itens verticalmente */
+    height: 100vh; /* Garante que a altura ocupe 100% da viewport */
+}
+
+#quiz-container {
+    margin: 30px; /* Margem em todas as direções */
+    align-items: center; /* Centraliza os itens dentro do container */
+    justify-content: center; /* Centraliza os itens dentro do container */
+    width: 90%; /* Ajusta a largura para ser 90% da tela */
+    max-width: 600px; /* Largura máxima do container */
+    background: white; /* Cor de fundo */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra do container */
+}
+
+h1 {
+    text-align: center; /* Centraliza o texto */
+    color: #4CAF50; /* Cor do texto */
+    margin: 15px; /* Margem ao redor do título */
+}
+
+#question-container {
+    margin-bottom: 25px; /* Espaçamento inferior */
+    margin-left: 10px; /* Espaçamento à esquerda */
+}
+
+#options-container {
+    margin-bottom: 20px; /* Espaçamento inferior */
+    margin-left: 20px; /* Espaçamento à esquerda */
+}
+
+label {
+    display: block; /* Exibe cada label em uma linha separada */
+    margin-bottom: 10px; /* Espaçamento inferior */
+}
+
+button {
+    background-color: #4CAF50; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    border: none; /* Remove borda */
+    padding: 10px 20px; /* Espaçamento interno */
+    cursor: pointer; /* Cursor do mouse muda para pointer */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte */
+    width: 100%; /* O botão ocupa 100% da largura do container */
+}
+
+    button:hover {
+        background-color: #45a049; /* Cor ao passar o mouse */
+    }
+
+.hidden {
+    display: none; /* Esconde elementos com a classe hidden */
+}
+
+#result-container {
+    text-align: center; /* Centraliza o texto */
+    margin: 0 auto; /* Centraliza o container */
+    width: 90%; /* Ajusta a largura para ser 90% da tela */
+    max-width: 700px; /* Largura máxima do container */
+    background: white; /* Cor de fundo */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra do container */
+    top: 50%; /* Posiciona 50% da altura da tela */
+    left: 50%; /* Posiciona 50% da largura da tela */
+    transform: translate(-50%, -50%); /* Ajusta para centralizar a modal */
+    z-index: 1000;
+    position: fixed;
+}
+
+#canvas {
+    position: absolute; /* Posicionamento absoluto */
+    top: 0; /* Alinha ao topo */
+    left: 0; /* Alinha à esquerda */
+    width: 100%; /* Ocupa 100% da largura */
+    height: 100%; /* Ocupa 100% da altura */
+    pointer-events: none; /* Ignora eventos do mouse */
+}
+
+/* Adicionando responsividade */
+@media (max-width: 768px) {
+    #quiz-container {
+        margin: 15px; /* Menos margem em telas menores */
+    }
+
+    button {
+        padding: 10px; /* Ajusta o padding do botão para telas menores */
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Ajusta o tamanho da fonte do título */
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 1.2rem; /* Ajusta o tamanho da fonte do título em telas menores */
+    }
+
+    button {
+        font-size: 14px; /* Ajusta o tamanho da fonte do botão */
+    }
+}

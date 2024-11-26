@@ -1,0 +1,58 @@
+.welcome-text {
+    font-size: 45px; /* Tamanho para telas pequenas */
+}
+
+.description-text {
+    font-size: 32px; /* Tamanho do texto para telas menores */
+    padding: 10px;
+}
+
+/* Ajustes para telas médias e grandes */
+@media (min-width: 768px) {
+    .welcome-text {
+        font-size: 40px;
+    }
+
+    .description-text {
+        font-size: 20px;
+        padding: 0;
+        margin-left: 20px;
+    }
+}
+
+.card {
+    transition: transform 0.2s;
+}
+
+    .card:hover {
+        transform: scale(1.05); /* Aumenta o tamanho do card ao passar o mouse */
+    }
+
+@media (max-width: 768px) {
+    .card {
+        width: 90%; /* Faz os cards ocuparem mais espaço em telas menores */
+        margin: 10px 0; /* Ajusta a margem para melhor espaçamento */
+    }
+}
+
+@media (max-width: 992px) {
+    .d-flex {
+        flex-direction: column; /* Cartões empilhados em telas pequenas */
+    }
+}
+
+@media (max-width: 767px) {
+    .welcome-text {
+        font-size: 2rem; /* Tamanho menor para telas pequenas */
+    }
+
+    .description-text {
+        font-size: 1rem; /* Tamanho menor para telas pequenas */
+        padding: 0 10px; /* Preenchimento nas laterais para telas pequenas */
+    }
+}
+@media (max-width: 768px) {
+    .card {
+        width: 250px; /* Define a largura dos cartões em tablets */
+    }
+}

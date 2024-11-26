@@ -5,8 +5,56 @@
       "PackagePath": "staticwebassets\\PF.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Vinicius\\Desktop\\PF\\PF\\wwwroot\\css\\FaleCon.css",
+      "PackagePath": "staticwebassets\\css\\FaleCon.css"
+    },
+    {
+      "Id": "C:\\Users\\Vinicius\\Desktop\\PF\\PF\\wwwroot\\css\\FaleConosco.css",
+      "PackagePath": "staticwebassets\\css\\FaleConosco.css"
+    },
+    {
+      "Id": "C:\\Users\\Vinicius\\Desktop\\PF\\PF\\wwwroot\\css\\Home.css",
+      "PackagePath": "staticwebassets\\css\\Home.css"
+    },
+    {
+      "Id": "C:\\Users\\Vinicius\\Desktop\\PF\\PF\\wwwroot\\css\\Kanban.css",
+      "PackagePath": "staticwebassets\\css\\Kanban.css"
+    },
+    {
+      "Id": "C:\\Users\\Vinicius\\Desktop\\PF\\PF\\wwwroot\\css\\LojaSust.css",
+      "PackagePath": "staticwebassets\\css\\LojaSust.css"
+    },
+    {
+      "Id": "C:\\Users\\Vinicius\\Desktop\\PF\\PF\\wwwroot\\css\\Ods.css",
+      "PackagePath": "staticwebassets\\css\\Ods.css"
+    },
+    {
+      "Id": "C:\\Users\\Vinicius\\Desktop\\PF\\PF\\wwwroot\\css\\Pess.css",
+      "PackagePath": "staticwebassets\\css\\Pess.css"
+    },
+    {
+      "Id": "C:\\Users\\Vinicius\\Desktop\\PF\\PF\\wwwroot\\css\\Quiz.css",
+      "PackagePath": "staticwebassets\\css\\Quiz.css"
+    },
+    {
+      "Id": "C:\\Users\\Vinicius\\Desktop\\PF\\PF\\wwwroot\\css\\Sob.css",
+      "PackagePath": "staticwebassets\\css\\Sob.css"
+    },
+    {
+      "Id": "C:\\Users\\Vinicius\\Desktop\\PF\\PF\\wwwroot\\css\\StyleFC.css",
+      "PackagePath": "staticwebassets\\css\\StyleFC.css"
+    },
+    {
       "Id": "C:\\Users\\Vinicius\\Desktop\\PF\\PF\\wwwroot\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Vinicius\\Desktop\\PF\\PF\\wwwroot\\css\\calc.css",
+      "PackagePath": "staticwebassets\\css\\calc.css"
+    },
+    {
+      "Id": "C:\\Users\\Vinicius\\Desktop\\PF\\PF\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "C:\\Users\\Vinicius\\Desktop\\PF\\PF\\wwwroot\\favicon.ico",

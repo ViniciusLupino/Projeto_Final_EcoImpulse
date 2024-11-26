@@ -1,0 +1,325 @@
+﻿
+
+body {
+    margin-bottom: 60px;
+}
+
+.flex {
+    display: flex;
+}
+
+
+.body {
+    background-image: url('../img/FunfoFC.jpg');
+    background-size: cover; /* Ocupa toda a tela */
+    background-position: center; /* Centraliza a imagem */
+    height: 100vh; /* Ocupa toda a altura da tela */
+    margin: 0; /* Remove margens */
+    text-align: center;
+}
+
+#hh1 {
+    margin-top: 30px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    color: white;
+}
+
+
+
+#container {
+    padding: 0px 100px;
+    text-align: center;
+    max-width: 1900px;
+    margin: 30px auto;
+    margin-bottom: 100px;
+}
+
+#contato {
+    display: flex;
+    padding: 40px 0px;
+    background-color: #274B33;
+    margin-top: 50px;
+    border-radius: 50px;
+    padding: 25px;
+}
+
+#dados {
+    width: 50%;
+    margin-right: 30px;
+}
+
+#mapa {
+    width: 50%;
+    margin-left: 30px;
+}
+
+    #mapa iframe {
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 1);
+        border-radius: 25px;
+    }
+
+
+#frm-contato {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    margin-top: 30px;
+}
+
+    #frm-contato input,
+    textarea {
+        font-family: 'Calibri';
+        font-size: 18px;
+        margin: 5px 0px;
+        border-radius: 10px;
+        border: solid 1px black;
+        padding: 5px 10px;
+        border: none;
+    }
+
+textarea {
+    resize: none;
+    padding: 5px;
+}
+
+#caixa {
+    padding: 5px;
+    height: 120px;
+    margin-top: 25px;
+    padding: 1px;
+    padding-bottom: 35px;
+    background-color: #759B6A;
+    color: white;
+}
+
+button {
+    margin: 25px 15px 0px 15px;
+    padding: 8px 40px;
+    border-radius: 10px;
+    border: 0;
+    font-family: 'Calibri';
+    font-size: 18px;
+}
+
+#botao-enviar {
+    background-color: #759B6A;
+    color: #ffffff;
+}
+
+#botao-apagar {
+    background-color: #D9D9D9;
+    color: black;
+}
+
+@media (max-width: 767px) {
+    #contato {
+        flex-direction: column;
+        width: 80%;
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+
+    #container {
+        margin: 10px 0;
+        padding: 0;
+        justify-content: center;
+        display: flex;
+    }
+
+    #dados {
+        width: 80%;
+        margin: 0;
+    }
+
+    #hh1,
+    #frm-contato,
+    #caixa {
+        width: 100%;
+    }
+
+    #caixa {
+        margin-top: 25px;
+        padding: 0;
+        height: auto;
+    }
+
+    p {
+        font-size: 13px;
+    }
+
+    #mapa {
+        width: 100%;
+        height: 200px;
+        margin: 0;
+    }
+
+    header {
+        width: 100%;
+    }
+
+    #logo-title {
+        display: none;
+    }
+
+    #idheader {
+        flex-direction: column;
+    }
+
+    #logoeimg {
+        width: 100%;
+        height: auto;
+        padding: 0;
+    }
+
+    .flex {
+        width: 100%;
+    }
+
+    #imglogo {
+        width: 100%;
+    }
+
+    #menuhorizontal {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #cinco {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+        #cinco li {
+            flex: 1;
+            flex-basis: 25%;
+        }
+
+    #menuhorizontal li a {
+        padding: 10px 4px;
+        font-size: 20px;
+    }
+
+
+    #cinco a {
+        display: block;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        color: #333;
+        border: 1px solid #2D6CD6;
+        border-radius: 5px;
+        margin: 5px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    #contato {
+        flex-direction: column;
+        width: 80%;
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+
+    #container {
+        margin: 50px 0;
+        padding: 0;
+        justify-content: center;
+        display: flex;
+    }
+
+    #dados {
+        width: 80%;
+        margin: 0;
+    }
+
+    #mapa {
+        width: 100%;
+        height: 450px;
+        margin: 0;
+    }
+
+    #caixa {
+        margin: 50px 0;
+    }
+
+    #menuhorizontal li a {
+        font-size: 14px;
+    }
+
+
+
+    #logoeimg {
+        width: 100%;
+        padding: 0;
+        height: auto;
+    }
+
+    #menuhorizontal {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #cinco {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+        #cinco li {
+            flex: 1;
+            flex-basis: 25%;
+        }
+
+    #menuhorizontal li a {
+        padding: 20px 10px;
+        font-size: 20px;
+    }
+
+
+    #cinco a {
+        display: block;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        color: #333;
+        border: 1px solid #2D6CD6;
+        border-radius: 5px;
+        margin: 5px;
+    }
+
+    #logo-title {
+        display: none;
+    }
+
+    header {
+        width: 100%;
+    }
+
+    .flex {
+        width: 100%;
+    }
+
+    #imglogo {
+        width: 100%;
+    }
+
+    #idheader {
+        flex-direction: column;
+    }
+}

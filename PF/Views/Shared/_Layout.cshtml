@@ -28,10 +28,27 @@
 						<a class="nav-link" href="/PessoaSust/Index">Pessoa sustentável</a>
 					</li>
 					<li class="nav-item">
+						<a class="nav-link" href="/LojaSust/Index">Loja sustentável</a>
+					</li>
+					<li class="nav-item">
 						<a class="nav-link" href="/Home/Index">
 							Marketplace
 						</a>
 					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/Quiz/Index">
+							Quiz
+						</a>
+					</li>
+
+					@if (User.IsInRole(PF.Constantes.Roles.Admin.ToString()) || User.IsInRole(PF.Constantes.Roles.User.ToString()))
+					{
+						<li class="nav-item">
+							<a class="nav-link" href="/Kanban/Index">
+								Quiz
+							</a>
+						</li>
+					}
 
 					@if (User.IsInRole(PF.Constantes.Roles.Admin.ToString()))
 					{

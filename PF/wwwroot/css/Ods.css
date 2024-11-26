@@ -1,0 +1,132 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/* Ajuste no espaçamento e largura de imagens */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Para telas menores (smartphones) */
+@media (max-width: 576px) {
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .p-3 {
+        width: 100%; /* O botão ocupará toda a largura */
+        height: auto; /* Altura automática para ajustar o conteúdo */
+    }
+}
+
+/* Para telas médias (tablets) */
+@media (min-width: 768px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1.25rem;
+    }
+
+    .p-3 {
+        width: 70%; /* Menos espaço em tablets */
+    }
+}
+
+/* Para telas grandes (desktops) */
+@media (min-width: 992px) {
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    .p-3 {
+        width: 50%; /* O botão terá tamanho menor em telas grandes */
+    }
+}
+
+
+/* Estilo geral para as modais */
+.modal-content {
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra da modal */
+}
+
+/* Estilo do cabeçalho da modal */
+.modal-header {
+    background-color: #fce185; /* Cor de fundo do cabeçalho */
+    color: black; /* Cor do texto */
+    border-top-left-radius: 10px; /* Bordas arredondadas */
+    border-top-right-radius: 10px; /* Bordas arredondadas */
+}
+
+/* Estilo do título da modal */
+.modal-title {
+    font-size: 1.5rem; /* Tamanho da fonte do título */
+    font-weight: bold; /* Negrito */
+}
+
+/* Estilo do corpo da modal */
+.modal-body {
+    font-size: 1rem; /* Tamanho da fonte do corpo */
+    color: #333; /* Cor do texto */
+}
+
+/* Estilo do botão "Fechar" no rodapé da modal */
+.modal-footer .btn-secondary {
+    background-color: #a2cca5; /* Cor de fundo do botão */
+    border: none; /* Remove a borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s; /* Transição suave para a cor de fundo */
+}
+
+    .modal-footer .btn-secondary:hover {
+        background-color: #5a6268; /* Cor do botão ao passar o mouse */
+    }
+
+/* Estilo do fundo da modal quando está ativa */
+.modal-backdrop.show {
+    opacity: 0.5; /* Opacidade do fundo */
+}
+
+/* Estilo do botão de fechar */
+.btn-close {
+    background-color: #faba66; /* Fundo transparente */
+    border: none; /* Remove a borda */
+    outline: none; /* Remove o contorno quando clicado */
+    padding: 0; /* Remove qualquer espaçamento */
+    color: white; /* Cor do ícone do botão de fechar */
+}
+
+    .btn-close:hover {
+        color: #fff; /* Cor do botão ao passar o mouse */
+    }
+

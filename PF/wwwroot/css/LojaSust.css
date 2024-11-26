@@ -1,0 +1,79 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.titulo-lojas-sustentaveis {
+    margin: 40px 0; /* Adiciona 40px de espaçamento acima e abaixo */
+    font-size: 30px; /* Ajusta o tamanho da fonte se necessário */
+}
+
+
+.img-container {
+    width: 100%;
+    max-width: 600px; /* Limita a largura da imagem */
+    margin: auto;
+    text-align: center;
+}
+
+    .img-container img {
+        width: 100%; /* Mantém a imagem responsiva */
+        max-width: 100%; /* Garante que a imagem não ultrapasse o contêiner */
+        height: auto; /* Mantém a proporção da imagem */
+        border-radius: 10px; /* Bordas arredondadas */
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Sombra leve para destaque */
+    }
+
+
+.card-img {
+    width: 100%; /* Mantém a imagem responsiva */
+    max-width: 300px; /* Ajuste o valor para o tamanho desejado */
+    height: auto; /* Mantém a proporção da imagem */
+    padding: 10px; /* Espaçamento entre os cards */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Sombra leve para destacar */
+}
+
+.video-custom {
+    width: 100%; /* Ajuste a largura para 80% do contêiner */
+    max-width: 1000px; /* Limite máximo de largura */
+    border-radius: 10px; /* Bordas arredondadas, opcional */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Sombra leve, opcional */
+}
+
+
+/* Centralizando o mapa */
+#mapa {
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    margin: 0 auto;
+    width: 100%; /* Garante que o div ocupe toda a largura disponível */
+}
+
+    #mapa iframe {
+        width: 80%; /* Ajuste a largura conforme desejado */
+        height: 400px; /* Defina a altura conforme desejado */
+        max-width: 800px; /* Limite máximo para uma tela maior */
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        border: none;
+    }
+
+

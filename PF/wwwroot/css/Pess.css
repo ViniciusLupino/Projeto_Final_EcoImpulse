@@ -1,0 +1,199 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+    .pilar h5 {
+        color: #4CAF50;
+    }
+
+    .pilar p {
+        color: #555;
+    }
+
+.about-section {
+    text-align: center;
+    margin-top:20px;
+}
+
+.about-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.about-description {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px; /* Tamanho máximo para a contêiner */
+    margin: 0 auto; /* Centraliza a imagem horizontalmente */
+}
+
+.img-responsive {
+    width: 100%; /* Faz a imagem ocupar toda a largura da contêiner */
+    height: auto; /* Mantém a proporção original da imagem */
+    max-width: 100%; /* Garante que a imagem não ultrapasse o contêiner */
+    border-radius: 8px; /* Opcional: arredonda as bordas */
+}
+
+/* Container dos cards */
+.container-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Distribui os cards igualmente */
+    gap: 20px; /* Espaçamento entre os cards */
+    margin: 20px 0; /* Margem em torno do container */
+}
+
+/* Estilos para os cards */
+.card {
+    background-color: #ffffff; /* Cor de fundo branca */
+    border-radius: 15px; /* Bordas arredondadas */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+    flex: 1 1 calc(48% - 20px); /* Responsivo, ocupando 48% do espaço menos a margem */
+    overflow: hidden; /* Esconde o conteúdo que ultrapassa as bordas */
+    padding: 20px; /* Espaçamento interno */
+}
+
+    /* Efeito ao passar o mouse */
+    .card:hover {
+        transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumenta a sombra ao passar o mouse */
+    }
+
+/* Estilo do conteúdo do card */
+.card-content {
+    display: flex;
+    flex-direction: column; /* Alinha os elementos verticalmente */
+}
+
+/* Estilo do título e texto dos cards */
+.card-title {
+    color: #4CAF50; /* Cor verde */
+    font-size: 1.5rem; /* Tamanho do texto */
+    margin-bottom: 10px; /* Espaço abaixo do título */
+    font-weight: bold; /* Negrito */
+}
+
+.card-text {
+    font-size: 1rem; /* Tamanho do texto */
+    line-height: 1.6; /* Aumenta o espaçamento entre linhas */
+    color: #555; /* Cor do texto */
+}
+
+
+/* Responsividade: Ajuste para telas menores */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+}
+
+/* Esconde o card da imagem em tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr 1fr; /* 2 colunas em tablets */
+    }
+
+}
+
+.image-container img:hover {
+    transform: scale(1.05); /* Aumenta a imagem um pouco ao passar o mouse */
+}
+
+.img-fluid {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+
+.faq-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.faq-section {
+    background-color: #F9FBE7;
+    color: #ffffff;
+    padding: 20px;
+    max-width: 800px;
+    width: 90%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* FAQ item */
+.faq {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+    .faq:last-child {
+        border-bottom: none;
+    }
+
+/* Pergunta do FAQ */
+.faq-question {
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+/* Resposta do FAQ */
+.faq-answer {
+    display: none;
+    padding: 10px 0;
+    font-size: 1em;
+}
+
+/* Exibe a resposta ao clicar na pergunta */
+.faq-question.active + .faq-answer {
+    display: block;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .faq-section {
+        width: 100%; /* Expande o FAQ para ocupar toda a largura em dispositivos menores */
+        padding: 10px; /* Reduz o padding em telas pequenas */
+    }
+
+    .faq-question {
+        font-size: 1em; /* Reduz o tamanho do texto da pergunta em dispositivos menores */
+    }
+
+    .faq-answer {
+        font-size: 0.9em; /* Reduz o tamanho do texto da resposta para melhorar a leitura */
+    }
+}
